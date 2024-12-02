@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+notebook = "*"
+pandas = "*"
+ipykernel = "*"
+matplotlib = "*"
+pillow = "*"
+tqdm = "*"
+spacy = {version = "==2.3.7", extras = ["cuda114"]}
+opencv-python = "*"
+keras = "*"
+tensorflow = "*"
+wordcloud = "*"
+tensorflow-hub = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
