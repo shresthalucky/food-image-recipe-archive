@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe Generation</title>
+    <script>
+      function handleSubmit() {
+        cookButton = document.getElementById('cook-button');
+        cookButton.disabled = true;
+        cookButton.innerHTML = 'Cooking...';
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Recipe Generation</h1>
+    <form method="POST" onsubmit="handleSubmit()">
+      <label for="text_input">Enter Ingredients (comma separated):</label>
+      <div>
+        <textarea id="text_input" name="text_input" rows="4" cols="50">{% if user_input %}{{user_input}}{% else %}flour, eggs, milk, salt, cinnamon, nutmeg, honey, chocolate{% endif %}</textarea>
+      </div>
+      <button type="submit" id="cook-button">Cook</button>
+    </form>
+    {% if error %} Error: {{error}} {% endif %} {% if result %}
+    <h3>{{ result.title }}</h3>
+
+    <h3>Ingredients:</h3>
+    <ul>
+      {% for ingredient in result.ingredients %}
+      <li>{{ ingredient }}</li>
+      {% endfor %}
+    </ul>
+
+    <h3>Instructions:</h3>
+    <ol>
+      {% for instruction in result.instructions %}
+      <li>{{ instruction }}</li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+  </body>
+</html>

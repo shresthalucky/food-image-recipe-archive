@@ -161,8 +161,9 @@ Thumbs.db
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
 
 # custom
+.vscode
 /dataset
-/model
+/models
 ingredients.csv
 recipe-merges.txt
 vocab-merges.txt

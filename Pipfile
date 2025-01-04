@@ -16,6 +16,8 @@ keras = "*"
 tensorflow = "*"
 wordcloud = "*"
 tensorflow-hub = "*"
+transformers= "*"
+flask = "*"
 
 [dev-packages]
 
